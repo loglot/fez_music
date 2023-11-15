@@ -1,19 +1,31 @@
 
-<button onclick="playSound()">Play</button>
+<button onclick="playSoundLoop()">Play</button>
 <!--script type="module" src="main.js"></script-->
 <script>
+
+
+function playSound(){
 var one = new Audio('https://raw.githubusercontent.com/loglot/fez_music/main/layers/layer_one.ogg')
 var two = new Audio('https://raw.githubusercontent.com/loglot/fez_music/main/layers/layer_two.ogg')
 var three = new Audio('https://raw.githubusercontent.com/loglot/fez_music/main/layers/layer_three.ogg')
 var four = new Audio('https://raw.githubusercontent.com/loglot/fez_music/main/layers/layer_four.ogg')
 var five = new Audio('https://raw.githubusercontent.com/loglot/fez_music/main/layers/layer_five.ogg')
-
-function playSound(){
 one.play()
 two.play()
 three.play()
 four.play()
 five.play()
+}
+
+async function playSoundLoop(){
+    while(true){
+        playSound()
+        await sleep(68000)
+    }
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 </script>
